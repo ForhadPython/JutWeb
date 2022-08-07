@@ -1,0 +1,37 @@
+<div class="col-lg-4">
+    <div class="singel-course">
+        <div class="thum">
+            <div class="image">
+                <img src="{{ course.thumbnail.url }}" alt="{{ course.caption }}">
+            </div>
+            <div class="price">
+                <span>{% if course.free_course %}Free{% else %}{{ course.price }}{% endif %}</span>
+            </div>
+        </div>
+        <div class="cont">
+            <ul>
+                <li><i class="fa fa-star"></i></li>
+                <li><i class="fa fa-star"></i></li>
+                <li><i class="fa fa-star"></i></li>
+                <li><i class="fa fa-star"></i></li>
+                <li><i class="fa fa-star"></i></li>
+            </ul>
+            <span>({{ course.total_reviews }} Reviws)</span>
+            <a href="/courses/{{ course.slug }}/"><h4>{{ course.title }}</h4></a>
+            <div class="course-teacher">
+                <div class="thum">
+                    <a href="/instructors/{{ course.instructor.slug }}/"><img src="{{ course.instructor.user.profile_picture.url }}" alt="{{ course.instructor.user.first_name }}"></a>
+                </div>
+                <div class="name">
+                    <a href="/instructors/{{ course.instructor.slug }}/"><h6>{{ course.instructor.user.first_name }} {{ course.instructor.user.last_name }}</h6></a>
+                </div>
+                <div class="admin">
+                    <ul>
+                        <li><a href="#"><i class="fa fa-user"></i><span>{{ course.total_students }}</span></a></li>
+                        <li><a href="#"><i class="fa fa-heart"></i><span>{{ course.total_hearts }}</span></a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div> <!-- singel course -->
+</div>

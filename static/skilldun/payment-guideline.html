@@ -1,0 +1,28 @@
+{% load static %}
+{% include 'header.html' %}
+   
+    <!--====== ABOUT PART START ======-->
+    
+    <section id="about-page" class="pt-70 pb-110">
+        <div class="container">
+            <div class="about-items">
+                <div class="row justify-content-center">
+                    {% for guide in PaymentInstruction %}
+                    <div class="col-lg-4 col-md-6 col-sm-10">
+                        <div class="about-singel-items mt-30">
+                            <span>{{ guide.title }}</span>
+                            <h4>{{ guide.subtitle }}</h4>
+                            <p>{{ guide.description | safe }}</p>
+                        </div> <!-- about singel -->
+                    </div>
+                    {% endfor %}
+                </div> <!-- row -->
+            </div> <!-- about items -->
+        </div> <!-- container -->
+    </section>
+    
+    <!--====== ABOUT PART ENDS ======-->
+
+{% include 'counter-part.html' %}
+{% include 'partner-logo.html' %}
+{% include 'footer.html' %}

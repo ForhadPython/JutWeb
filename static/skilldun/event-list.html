@@ -1,0 +1,27 @@
+<!--====== EVENTS PART START ======-->
+
+<section id="event-page" class="pt-90 pb-120 gray-bg">
+    <div class="container">
+       <div class="row">
+           {% for event in EventItem %}
+           <div class="col-lg-6">
+                <div class="singel-event-list mt-30">
+                    <div class="event-thum">
+                        <img src="{{ event.image.url }}" alt="{{ event.caption }}">
+                    </div>
+                    <div class="event-cont">
+                        <span><i class="fa fa-calendar"></i> {{ event.caption }}</span>
+                        <a href="/events/{{ event.slug }}/"><h4>{{ event.title }}</h4></a>
+                        <span><i class="fa fa-clock-o"></i> {{ event.date_time_from }} - {{ event.date_time_to }}</span>
+                        <span><i class="fa fa-map-marker"></i> {{ event.location }}</span>
+                        <p>{{ event.description }}</p>
+                    </div>
+                </div>
+            </div>
+           {% endfor %}
+       </div> <!-- row -->
+        {% include 'item-pagination.html' with base_url='events' %}
+    </div> <!-- container -->
+</section>
+
+<!--====== EVENTS PART ENDS ======-->

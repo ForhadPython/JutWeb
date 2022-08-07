@@ -1,0 +1,18 @@
+{% include 'header.html' %}
+
+    <!--====== TEACHERS PART START ======-->
+
+    <section id="teachers-page" class="pt-90 pb-120 gray-bg">
+        <div class="container">
+           <div class="row">
+               {% for teacher in Instructor %}
+               {% include 'single-teacher-item.html' with classes='col-lg-3' %}
+               {% endfor %}
+           </div> <!-- row -->
+            {% include 'item-pagination.html' with base_url='instructors' %}
+        </div> <!-- container -->
+    </section>
+
+    <!--====== TEACHERS PART ENDS ======-->
+
+{% include 'footer.html' %}

@@ -1,0 +1,40 @@
+{% load static %}
+
+<!--====== VIDEO FEATURE PART START ======-->
+    
+<section id="video-feature" class="bg_cover pt-60 pb-110" style="background-image: url({{ MetaData.facility_background }})">
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-lg-6 order-last order-lg-first">
+                <div class="video text-lg-left text-center pt-50">
+                    <a class="Video-popup" href="{{ MetaData.facility_video_link }}"><i class="fa fa-play"></i></a>
+                </div> <!-- row -->
+            </div>
+            <div class="col-lg-5 offset-lg-1 order-first order-lg-last">
+                <div class="feature pt-50">
+                    <div class="feature-title">
+                        <h3>Our Facilities</h3>
+                    </div>
+                    <ul>
+                        {% for facility in FacilityItem %}
+                        <li>
+                            <div class="singel-feature">
+                                <div class="icon">
+                                    <img src="{{ facility.image.url }}" alt="{{ facility.caption }}">
+                                </div>
+                                <div class="cont">
+                                    <h4>{{ facility.title }}</h4>
+                                    <p>{{ facility.description }}</p>
+                                </div>
+                            </div> <!-- singel feature -->
+                        </li>
+                        {% endfor %}
+                    </ul>
+                </div> <!-- feature -->
+            </div>
+        </div> <!-- row -->
+    </div> <!-- container -->
+    <div class="feature-bg"></div> <!-- feature bg -->
+</section>
+
+<!--====== VIDEO FEATURE PART ENDS ======-->

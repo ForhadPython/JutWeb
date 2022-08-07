@@ -1,0 +1,7 @@
+{% load static %}
+{% include 'header.html' %}
+{% if CourseEnrollment %}
+{% include 'course-list.html' with CourseItem=CourseEnrollment total_pagination=enroll_total_pagination %}
+{% endif %}
+{% include 'course-list.html' %}
+{% include 'footer.html' %}

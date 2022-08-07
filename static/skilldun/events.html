@@ -1,0 +1,7 @@
+{% load static %}
+{% include 'header.html' %}
+{% if EventBooking %}
+{% include 'event-list.html' with EventItem=EventBooking total_pagination=booking_total_pagination %}
+{% endif %}
+{% include 'event-list.html' %}   
+{% include 'footer.html' %}

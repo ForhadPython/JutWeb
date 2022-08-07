@@ -1,0 +1,11 @@
+<div class="col-sm-6 {{ classes }}">
+  <div class="singel-teachers mt-30 text-center">
+      <div class="image">
+          <img src="{{ teacher.user.profile_picture.url }}" alt="{{ teacher.user.first_name }}">
+      </div>
+      <div class="cont">
+          <a href="/instructors/{{ teacher.slug }}/"><h6>{{ teacher.user.first_name }} {{ teacher.user.last_name }}</h6></a>
+          <span>{{ teacher.user.position }}</span>
+      </div>
+  </div> <!-- singel teachers -->
+</div>

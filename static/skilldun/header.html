@@ -1,0 +1,203 @@
+{% load static %}
+
+<!doctype html>
+<html lang="en">
+<head>
+    <!--====== Required meta tags ======-->
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="description" content="{{ MetaData.description }}">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    
+    <!--====== Title ======-->
+    <title>{{ MetaData.site_title }}</title>
+    
+    <!--====== Favicon Icon ======-->
+    <link rel="shortcut icon" href="{{ MetaData.favicon.url }}" type="image/png">
+
+    <!--====== Slick css ======-->
+    <link rel="stylesheet" href="{% static 'skilldun/css/slick.css' %}">
+
+    <!--====== Animate css ======-->
+    <link rel="stylesheet" href="{% static 'skilldun/css/animate.css' %}">
+    
+    <!--====== Nice Select css ======-->
+    <link rel="stylesheet" href="{% static 'skilldun/css/nice-select.css' %}">
+    
+    <!--====== Nice Number css ======-->
+    <link rel="stylesheet" href="{% static 'skilldun/css/jquery.nice-number.min.css' %}">
+
+    <!--====== Magnific Popup css ======-->
+    <link rel="stylesheet" href="{% static 'skilldun/css/magnific-popup.css' %}">
+
+    <!--====== Bootstrap css ======-->
+    <link rel="stylesheet" href="{% static 'skilldun/css/bootstrap.min.css' %}">
+    
+    <!--====== Fontawesome css ======-->
+    <link rel="stylesheet" href="{% static 'skilldun/css/font-awesome.min.css' %}">
+    
+    <!--====== Default css ======-->
+    <link rel="stylesheet" href="{% static 'skilldun/css/default.css' %}">
+    
+    <!--====== Style css ======-->
+    <link rel="stylesheet" href="{% static 'skilldun/css/style.css' %}">
+    
+    <!--====== Responsive css ======-->
+    <link rel="stylesheet" href="{% static 'skilldun/css/responsive.css' %}">
+  
+    {% block header_css %}
+    {% endblock header_css %}
+</head>
+
+<body>
+    <!--====== PRELOADER PART START ======-->
+    
+    <div class="preloader">
+        <div class="loader rubix-cube">
+            <div class="layer layer-1"></div>
+            <div class="layer layer-2"></div>
+            <div class="layer layer-3 color-1"></div>
+            <div class="layer layer-4"></div>
+            <div class="layer layer-5"></div>
+            <div class="layer layer-6"></div>
+            <div class="layer layer-7"></div>
+            <div class="layer layer-8"></div>
+        </div>
+    </div>
+    
+    <!--====== PRELOADER PART START ======-->
+    
+    <!--====== HEADER PART START ======-->
+    
+    <header id="header-part">
+       
+        <div class="header-top d-none d-lg-block">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-6">
+                        <div class="header-contact text-lg-left text-center">
+                            <ul>
+                                <li><img src="{% static 'skilldun/images/all-icon/map.png' %}" alt="icon"><span>{{ MetaData.location | safe }}</span></li>
+                                <li><img src="{% static 'skilldun/images/all-icon/email.png' %}" alt="icon"><span>{{ MetaData.email | safe }}</span></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="header-opening-time text-lg-right text-center">
+                            <p>Opening Hours : {{ MetaData.opening_hour }}</p>
+                        </div>
+                    </div>
+                </div> <!-- row -->
+            </div> <!-- container -->
+        </div> <!-- header top -->
+        
+        <div class="header-logo-support pt-15 pb-15">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-4 col-md-4">
+                        <div class="logo">
+                            <a href="/">
+                                <img src="{{ MetaData.logo.url }}" alt="{{ MetaData.logo_caption }}">
+                            </a>
+                        </div>
+                    </div>
+                    <div class="col-lg-8 col-md-8">
+                        <div class="support-button float-right d-none d-md-block">
+                            <div class="support float-left">
+                                <div class="icon">
+                                    <img src="{% static 'skilldun/images/all-icon/support.png' %}" alt="icon">
+                                </div>
+                                <div class="cont">
+                                    <p>Need Help? call us free</p>
+                                    <span>{{ MetaData.phone | safe }}</span>
+                                </div>
+                            </div>
+                            <div class="button float-left">
+                                <a href="/signup/" class="main-btn">Get Started</a>
+                            </div>
+                        </div>
+                    </div>
+                </div> <!-- row -->
+            </div> <!-- container -->
+        </div> <!-- header logo support -->
+        
+        <div class="navigation">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-10 col-md-10 col-sm-9 col-8">
+                        <nav class="navbar navbar-expand-lg">
+                            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                                <span class="icon-bar"></span>
+                                <span class="icon-bar"></span>
+                                <span class="icon-bar"></span>
+                            </button>
+
+                            <div class="collapse navbar-collapse sub-menu-bar" id="navbarSupportedContent">
+                                <ul class="navbar-nav mr-auto">
+                                    <li class="nav-item">
+                                        <a{% if request.path == '/' %} class="active"{% endif %} href="/">Home</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a{% if request.path == '/about/' %} class="active"{% endif %} href="/about/">About us</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a{% if request.path == '/courses/' %} class="active"{% endif %} href="/courses/">Courses</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a{% if request.path == '/events/' %} class="active"{% endif %} href="/events/">Events</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a{% if request.path == '/instructors/' %} class="active"{% endif %} href="/instructors/">Our teachers</a>
+                                    </li>
+<!--                                    <li class="nav-item">-->
+<!--                                        <a href="blog.html">Blog</a>-->
+<!--                                        <ul class="sub-menu">-->
+<!--                                            <li><a href="blog.html">Blog</a></li>-->
+<!--                                            <li><a href="blog-singel.html">Blog Singel</a></li>-->
+<!--                                        </ul>-->
+<!--                                    </li>-->
+<!--                                    <li class="nav-item">-->
+<!--                                        <a href="shop.html">Shop</a>-->
+<!--                                        <ul class="sub-menu">-->
+<!--                                            <li><a href="shop.html">Shop</a></li>-->
+<!--                                            <li><a href="shop-singel.html">Shop Singel</a></li>-->
+<!--                                        </ul>-->
+<!--                                    </li>-->
+                                    <li class="nav-item">
+                                        <a{% if request.path == '/contact/' %} class="active"{% endif %} href="/contact/">Contact</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </nav> <!-- nav -->
+                    </div>
+                    <div class="col-lg-2 col-md-2 col-sm-3 col-4">
+                        <div class="right-icon text-right">
+                            <ul>
+<!--                                <li><a href="#" id="search"><i class="fa fa-search"></i></a></li>-->
+                            </ul>
+                        </div> <!-- right icon -->
+                    </div>
+                </div> <!-- row -->
+            </div> <!-- container -->
+        </div>
+        
+    </header>
+    
+    <!--====== HEADER PART ENDS ======-->
+   
+    <!--====== SEARCH BOX PART START ======-->
+    
+    <div class="search-box">
+        <div class="serach-form">
+            <div class="closebtn">
+                <span></span>
+                <span></span>
+            </div>
+            <form action="#">
+                <input type="text" placeholder="Search by keyword">
+                <button><i class="fa fa-search"></i></button>
+            </form>
+        </div> <!-- serach form -->
+    </div>
+    
+    <!--====== SEARCH BOX PART ENDS ======-->

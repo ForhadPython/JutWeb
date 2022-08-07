@@ -1,0 +1,23 @@
+{% load static %}
+
+<!--====== COURSE PART START ======-->
+    
+<section id="course-part" class="pt-115 pb-120 gray-bg">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-6">
+                <div class="section-title pb-45">
+                    <h5>Our course</h5>
+                    <h2>Featured courses </h2>
+                </div> <!-- section title -->
+            </div>
+        </div> <!-- row -->
+        <div class="row course-slied mt-30">
+            {% for course in CourseItem %}
+            {% include 'single-course-item.html' with course=course %}
+            {% endfor %}
+        </div> <!-- course slied -->
+    </div> <!-- container -->
+</section>
+
+<!--====== COURSE PART ENDS ======-->
